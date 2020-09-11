@@ -1,0 +1,127 @@
+@media (max-width: @screen-xs) {
+
+  .max-xs-width-100 {
+    width:100%;
+  }
+
+  .min-xs-hide {
+    display: none;
+  }
+
+  .gen-max-xs-marg(8);
+  .gen-max-xs-marg(@n, @i: 0) when (@i =< @n) {
+    .max-xs-marg-top-@{i} {
+      margin-top: (@i * @padding-base-vertical);
+    }
+    .max-xs-marg-bot-@{i} {
+      margin-bottom: (@i * @padding-base-vertical);
+    }
+    .max-xs-marg-@{i} {
+      margin-top: (@i * @padding-base-vertical);
+      margin-bottom: (@i * @padding-base-vertical);
+    }
+    .gen-max-xs-marg(@n, (@i + 1));
+    }
+
+}
+
+@media (max-width: @screen-sm) {
+
+  .max-sm-width-100 {
+    width:100%;
+  }
+
+  .gen-max-sm-marg(8);
+  .gen-max-sm-marg(@n, @i: 0) when (@i =< @n) {
+    .max-sm-marg-top-@{i} {
+      margin-top: (@i * @padding-base-vertical);
+    }
+    .max-sm-marg-bot-@{i} {
+      margin-bottom: (@i * @padding-base-vertical);
+    }
+    .max-sm-marg-@{i} {
+      margin-top: (@i * @padding-base-vertical);
+      margin-bottom: (@i * @padding-base-vertical);
+    }
+    .gen-max-sm-marg(@n, (@i + 1));
+    }
+
+}
+
+@media (min-width: @screen-sm) {
+
+  .min-sm-hide {
+    display: none;
+  }
+
+  .min-sm-pad-left {
+    padding-left: @grid-gutter-width / 2;
+  }
+
+  .min-sm-pad-right {
+    padding-right: @grid-gutter-width / 2;
+  }
+
+  .gen-min-sm-marg(8);
+  .gen-min-sm-marg(@n, @i: 0) when (@i =< @n) {
+    .min-sm-marg-top-@{i} {
+      margin-top: (@i * @padding-base-vertical);
+    }
+    .min-sm-marg-bot-@{i} {
+      margin-bottom: (@i * @padding-base-vertical);
+    }
+    .min-sm-marg-@{i} {
+      margin-top: (@i * @padding-base-vertical);
+      margin-bottom: (@i * @padding-base-vertical);
+    }
+    .gen-min-sm-marg(@n, (@i + 1));
+    }
+
+}
+
+@media (min-width: @screen-md) {
+
+  .min-md-hide {
+    display: none;
+  }
+
+  .min-md-pad-left {
+    padding-left: @grid-gutter-width / 2;
+  }
+
+  .min-md-pad-right {
+    padding-right: @grid-gutter-width / 2;
+  }
+
+  .gen-min-md-marg(8);
+  .gen-min-md-marg(@n, @i: 0) when (@i =< @n) {
+    .min-md-marg-top-@{i} {
+      margin-top: (@i * @padding-base-vertical);
+    }
+    .min-md-marg-bot-@{i} {
+      margin-bottom: (@i * @padding-base-vertical);
+    }
+    .min-md-marg-@{i} {
+      margin-top: (@i * @padding-base-vertical);
+      margin-bottom: (@i * @padding-base-vertical);
+    }
+    .gen-min-md-marg(@n, (@i + 1));
+    }
+
+}
+
+@media (max-width: @screen-md) {
+
+  .max-md-hide {
+    display: none;
+  }
+
+}
+
+@media (max-width: @screen-sm) {
+
+  .max-sm-hide {
+    display: none;
+  }
+
+}

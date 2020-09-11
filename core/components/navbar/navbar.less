@@ -1,0 +1,42 @@
+@menu-active: @gray-lighter;
+@menu-hover: lighten(@menu-active,3%);
+
+.nav li:first-letter { text-transform: capitalize; }
+
+.navbar {
+
+    border-radius: 0;
+    margin-left: -@grid-gutter-width/2;
+
+}
+
+.navbar-collapse.collapse { margin-left: -@grid-gutter-width; }
+
+.navbar-collapse.collapse.in { margin-left: -@grid-gutter-width/2; }
+
+.navbar-toggle {
+    float: left;
+    margin-left: 15px;
+}
+
+.navbar a { margin: @navbar-padding 0px; }
+
+.nav-stacked.vertical a.active {
+
+    background: @menu-active;
+    box-shadow: 0px 0px 0px 1px darken(@menu-active,8%);
+
+}
+
+.nav-stacked.vertical a:hover {
+
+    background: @menu-hover;
+    box-shadow: 0px 0px 0px 1px darken(@menu-hover,8%);
+
+}
+
+// No repsonsivness
+
+.navbar-nav > li { float: left; }
+
+.level-1, .level-2, .level-3 { .nav-tabs(); }

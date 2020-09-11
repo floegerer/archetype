@@ -1,0 +1,94 @@
+<% var menu = filetree;
+var menuclass = 'inactive'; %>
+
+<% for ( var i = menu.length; i--; )  {
+
+  if( menu[i].search( /( \/( ?!index ).*|login )/ ) > -1 )  {
+    menu.splice( i , 1 );
+  }
+} %>
+
+<nav class="navbar">
+
+  <div class="container">
+
+    <div class="col-12 marg-half pad-none">
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed push-left" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <div id="navbar"> <!-- navbar-collapse collapse -->
+        <%=addNav(menu, 0)%>
+      </div>
+
+    </div>
+
+  </div>
+</nav>
+
+<nav class="navbar-sub">
+
+  <div class="container pad-none">
+
+    <div class="col-12 marg-half pad-none">
+
+      <%=addNav(menu, 1)%>
+      <%=addNav(menu, 2)%>
+
+    </div>
+
+  </div>
+
+</nav>
+
+<%function addNav(menu, level){%>
+
+  <%parentUrls = []%>
+
+  <%for (var i = 0; i < level; i++){
+    parentUrls.push(pagetree[i]);
+  }%>
+
+  <% if(parentUrls.length > 0){
+    for (var i in parentUrls){
+      menu = parentUrls[i] ?  menu[parentUrls[i]] : [];
+    }
+  }%>
+
+  <%parentUrl = ''%>
+
+  <% if( menu != undefined && Object.keys(menu).length > 0){ %>
+
+    <ul class="nav navbar-nav width-100 level-<%=level%>">
+
+      <% for( var k in menu) { %>
+
+        <%fullUrl = [].concat(parentUrls);
+        fullUrl.push(k);
+        fullUrl = fullUrl.join('/')%>
+
+        <li>
+          <%if (k === pagetree[level]) menuclass='active'%>
+          <a class='<%= menuclass %>' href='/<%= fullUrl %>'>
+            <%= k.replace(/-/g, ' '); %>
+          </a>
+        </li>
+
+        <% menuclass='inactive' %>
+
+      <% } %>
+
+      <%if (level===0) { %>
+      <li class="pull-right"><a href="/login"><span class="glyphicon glyphicon-off"></span><span class="text"> Logout</span></a></li>
+      <%}%>
+
+    </ul>
+
+  <%}%>
+<%}%>

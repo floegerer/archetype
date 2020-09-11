@@ -1,0 +1,66 @@
+@header-height: 160px;
+@header-shadow: 40px;
+
+.header-big {
+
+  #gradient > .directional(lighten(@brand-header,5%); darken(@brand-header,10%); 45deg);
+  box-shadow: 0px -@header-shadow / 3 @header-shadow darken(@brand-header, 2%) inset;
+  height: @header-height;
+  font-size: 32px;
+  color: white;
+
+  .container {
+    height: 100%;
+  }
+
+  img {
+    display: inline-block;
+    height: 45%;
+    opacity: @brand-header-logo-opacity;
+  }
+
+  a {
+    margin-left: -@grid-gutter-width/2;
+  }
+
+}
+
+.template-login,
+.template-vertical {
+
+  .header-big {
+    box-shadow: 0px -@header-shadow / 3 @header-shadow darken(@brand-header, 5%) inset;
+  }
+
+  .header-big a {
+    margin-left: 0px;
+  }
+
+}
+
+@media (max-width: @screen-sm) {
+
+  .header-big {
+    height: @header-height/1.5;
+    text-align: center;
+  }
+
+}
+
+@media (max-width: @screen-xs) {
+
+  .header-big {
+    text-align: center;
+  }
+
+}
+
+@media (min-width: @screen-sm) {
+
+  .template-login .header-big {
+    text-align: center;
+    height: @header-height * 1.5;
+    img { height: 40%; }
+  }
+
+}

@@ -1,0 +1,8 @@
+/node_modules/
+/projects/personal/
+/projects/jumio/
+/projects/**/src/css/main.css
+/projects/**/src/css/main.map
+/projects/**/config/pages.json
+/projects/**/theme/theme.css
+/projects/**/src/css/*.css

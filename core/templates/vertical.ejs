@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+<%- include( uxproject + 'layout/head' ) %>
+
+<body class="template-vertical">
+
+  <%- include( uxproject + 'layout/header' ) %>
+
+  <div class="container-fluid">
+
+  <div class="row">
+
+    <div class="col-sm-2">
+
+      <%- include( uxcomponents + 'navbar/navbar-vertical' ) %>
+
+    </div>
+
+    <div class="col-sm-10">
+
+      <%- include( uxproject + page ) %>
+
+    </div>
+
+  </div>
+
+  </div>
+
+  <%- include( uxproject + 'layout/footer' ) %>
+
+  <%- include( uxcore + 'layout/scripts' ) %>
+
+</body>
+
+</html>

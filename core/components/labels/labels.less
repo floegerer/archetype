@@ -1,0 +1,61 @@
+.label {
+  font-size: @font-size-base;
+  font-weight: normal;
+}
+
+.label-default
+{
+  background: @gray-lighter;
+  color: @gray;
+
+  &:hover, &:focus { background: @gray; }
+
+}
+
+.label-primary
+{
+  background: lighten(@brand-success, 40%);
+  color: darken(@brand-success, 15%);
+
+  &:hover, &:focus { background: @brand-success; }
+}
+
+.label-success
+{
+  background: lighten(@brand-success, 30%);
+  color: darken(@brand-success, 15%);
+
+  &:hover, &:focus { background: @brand-success; }
+}
+
+.label-info
+{
+  background: lighten(@brand-info, 30%);
+  color: darken(@brand-info, 15%);
+
+  &:hover, &:focus { background: @brand-info; }
+}
+
+.label-warning
+{
+  background: lighten(@brand-warning, 30%);
+  color: darken(@brand-warning, 20%);
+
+  &:hover, &:focus { background: @brand-warning; }
+}
+
+.label-danger
+{
+  background: lighten(@brand-danger, 30%);
+  color: darken(@brand-danger, 15%);
+
+  &:hover, &:focus { background: @brand-danger; }
+}
+
+.label {
+  &:hover, &:focus { color: white; }
+}
+
+.UTC {
+  display: none;
+}

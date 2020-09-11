@@ -1,0 +1,75 @@
+// Reset padding
+
+
+.pad-none {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+// Set width percentage
+
+
+.gen-width-percent(100);
+.gen-width-percent(@n, @i: 0) when (@i =< @n) {
+  .width-@{i} {
+    width: (@i * 1%);
+    margin:0 auto;
+  }
+  .gen-width-percent(@n, (@i + 10));
+}
+
+
+// Set fixed with and center
+
+
+.gen-width-fixed(640);
+.gen-width-fixed(@n, @i: 240) when (@i =< @n) {
+  .width-@{i} {
+    width: @i * 1px;
+    margin:0 auto;
+  }
+  .gen-width-fixed(@n, (@i + 80));
+}
+
+
+// Set columns without using grid system
+
+
+.gen-columns(12);
+.gen-columns(@n, @i: 1) when (@i =< @n) {
+  .col-@{i} {
+    width: (@i * 100% / @n);
+    float: left;
+    padding-left: @grid-gutter-width / 2;
+    padding-right: @grid-gutter-width / 2;
+  }
+  .gen-columns(@n, (@i + 1));
+}
+
+
+// Generate margin classes
+
+
+.gen-marg(8);
+.gen-marg(@n, @i: 0) when (@i =< @n) {
+  .marg-@{i} {
+    margin-top: (@i * @padding-base-vertical);
+    margin-bottom: (@i * @padding-base-vertical);
+  }
+  .marg-all-@{i} {
+    margin: (@i * @padding-base-vertical);
+  }
+  .marg-top-@{i} {
+    margin-top: (@i * @padding-base-vertical);
+  }
+  .marg-bot-@{i} {
+    margin-bottom: (@i * @padding-base-vertical);
+  }
+  .marg-left-@{i} {
+    margin-left: (@i * @padding-base-horizontal);
+  }
+  .marg-right-@{i} {
+    margin-right: (@i * @padding-base-horizontal);
+  }
+  .gen-marg(@n, (@i + 1));
+}

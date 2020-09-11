@@ -1,0 +1,51 @@
+.template-vertical,
+.template-combined {
+
+  .container-fluid
+  .container {
+    width: auto;
+  }
+
+  .container-fluid {
+    max-width: @container-large-desktop;
+    margin: 0 auto;
+  }
+
+  .nav.vertical {
+    padding-top: 40px;
+    float: left;
+    width: 80%;
+    border-image: linear-gradient(to bottom, #dbdbdb, white) 1 100%;
+    border-left: 0px solid white;
+    border-right: 1px solid #dedede;
+    margin-top: -20px;
+  }
+
+  .nav-stacked.vertical a {
+    color: @gray-dark;
+    margin-right: 20px;
+  }
+
+}
+
+.template-vertical {
+
+  .header-big {
+    margin-bottom: 20px;
+  }
+
+}
+
+
+@media (min-width: @screen-sm-min) {
+
+  .template-combined {
+
+    .col-sm-9 {
+      width: 75%;
+      margin-left: -40px;
+    }
+
+  }
+
+}

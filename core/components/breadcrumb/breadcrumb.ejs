@@ -1,0 +1,19 @@
+<ol class='breadcrumb'>
+
+  <li>
+    <a href='<%= href1 %>'><%= link1 %></a>
+  </li>
+
+  <li class='<% if( link3 == '-' ) { %> active <% } %>'>
+    <a href='<%= href2 %>'><%= link2 %></a>
+  </li>
+
+  <% if( link3 != '-' ) { %>
+
+  <li class='active'>
+      <a href=''><%= link3 %></a>
+  </li>
+
+  <% } %>
+
+</ol>

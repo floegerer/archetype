@@ -1,0 +1,67 @@
+
+<script src='/js/jquery.min.js'></script>
+<script src='/js/bootstrap.min.js'></script>
+<script src='/js/bowser.min.js'></script>
+
+<script>
+
+  $.fn.clicktoggle = function(a,b) {
+    return this.each(function() {
+      var clicked = false;
+      $(this).click(function() {
+        if (clicked) {
+          clicked = false;
+          return b.apply(this, arguments);
+        }
+        clicked = true;
+        return a.apply(this, arguments);
+      });
+    });
+  };
+
+
+
+  $('[data-toggle="tooltip"]').tooltip();
+  $('[data-toggle="popover"]').popover();
+
+
+
+  $('.btn').click(function() {
+    $(this).children('.text1').toggleClass('hidden');
+    $(this).children('.text2').toggleClass('hidden');
+  });
+
+$(function() {
+
+  if (bowser.msie) { $('body').toggleClass('msie'); }
+  if (bowser.firefox) { $('body').toggleClass('firefox'); }
+  if (bowser.chrome) { $('body').toggleClass('chrome'); }
+
+//  alert(bowser.name);
+//
+//  switch (bowser.name) {
+//
+//    case "Chrome":
+//
+//      $('body').toggleClass('chrome');
+//      break;
+//
+//    case "Firefox":
+//
+//      $('body').toggleClass('firefox');
+//      break;
+//
+//    case "Internet Explorer":
+//
+//      $('body').toggleClass('msie');
+//      break;
+//
+//  }
+
+});
+
+
+
+
+
+</script>

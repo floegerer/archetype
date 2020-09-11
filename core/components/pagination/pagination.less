@@ -1,0 +1,140 @@
+@pagination-height: 44px;
+
+.pagination {
+
+  .btn {
+    height: @pagination-height - 2px;
+    padding-top: @padding-base-vertical - 2px;
+    text-transform: capitalize;
+  }
+
+  .btn:focus {
+    outline: none;
+  }
+
+  & {
+    margin: 0;
+    position: relative;
+    width: 100%;
+  }
+
+  .pagination-box {
+    border-radius: @border-radius-base;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    border: 1px solid @panel-inner-border;
+  }
+
+  .counter {
+    display: block;
+    height: @pagination-height;
+    line-height: @pagination-height;
+    padding: 0 @padding-base-horizontal * 0.75;
+    color: #555;
+  }
+
+  .pagination-centered {
+
+    ul {
+      height: 44px;
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      display: inline-block;
+      margin: 0;
+    }
+
+    li > a, li > span {
+      display: inline-block;
+      padding: 0 @padding-base-horizontal * 0.5;
+      line-height: @pagination-height - 2px;
+      text-decoration: none;
+      background-color: #ffffff;
+      margin: 0;
+      min-width: @pagination-height - 4px;
+    }
+
+    a:hover,
+    .active a,
+    .active span {
+      background-color: lighten(@gray-lighter,2%);
+    }
+
+    .active a,
+    .active span {
+      color: @gray-dark;
+      cursor: default;
+    }
+
+    .disabled span,
+    .disabled a,
+    .disabled a:hover {
+      color: #c8c8c8;
+      background-color: transparent;
+      cursor: default;
+    }
+
+  }
+
+  ul li:first-child a,
+  ul li:first-child span {
+    border-left-width: 1px;
+    border-radius: @border-radius-base 0 0 @border-radius-base;
+    padding: 0 @padding-base-horizontal * 0.4;
+  }
+
+  ul li:last-child a,
+  ul li:last-child span {
+    border-radius: 0 @border-radius-base @border-radius-base 0;
+    padding: 0 @padding-base-horizontal * 0.4;
+  }
+
+  .pagination-left {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+
+  .pagination-centered {
+    text-align: center;
+  }
+
+  .pagination-right {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+
+  .pagination-left span {
+    color: @gray-lighter;
+    padding: 0 8px;
+  }
+
+  .pagination-right .btn {
+    &, &:hover {
+    background-color: #ffffff;
+    }
+  }
+
+  .right {
+    width: 86px;
+    cursor: text;
+  }
+
+  @media (max-width: @screen-md) {
+
+    .pagination-left,
+    .pagination-right,
+    .pagination-centered .more {
+      display: none;
+    }
+
+    .arrow a {
+      padding: 0 @padding-base-horizontal;
+    }
+
+  }
+
+}

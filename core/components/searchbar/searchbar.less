@@ -1,0 +1,67 @@
+@searchbar-height: 40px;
+
+.searchbar {
+
+  li a {
+    padding: 8px @searchbar-height/2;
+  }
+
+  .form-control {
+    display: block;
+  }
+
+  input, button {
+    &, &:focus {
+    height: @searchbar-height;
+    line-height: @searchbar-height;
+    padding: 0px @searchbar-height/2;
+    background: none;
+    border: none;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    box-shadow: none;
+    text-transform: capitalize;
+    display: block;
+    float:right;
+    }
+  }
+
+  button, button:hover {
+    background-color: lighten(@breadcrumb-bg, 2%);
+    border-left: 1px solid lighten(@panel-inner-border, 2%);
+    border-right: 1px solid lighten(@panel-inner-border, 2%);
+    top: -@searchbar-height;
+    z-index: 999;
+  }
+
+  button.right {
+    border-right: none;
+  }
+
+  .btn-default:hover {
+    background-color: darken(@breadcrumb-bg, 4%);
+  }
+
+  margin: 0px;
+  background-color: @breadcrumb-bg;
+  margin-bottom: @line-height-computed;
+  border-radius: @border-radius-base;
+  border: 1px solid @panel-inner-border;
+  box-shadow: none;
+  position: relative;
+  height: @searchbar-height+2px;
+  display: block;
+  width: 100%;
+
+  & * {
+    color: @gray;
+  }
+
+  @media (max-width: @screen-xs) {
+
+    .text { display: none;
+    }
+
+  }
+
+}

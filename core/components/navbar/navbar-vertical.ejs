@@ -1,0 +1,32 @@
+<% var menu = filetree.slice( 0 );
+   var page = pagetree[0];
+   var menuclass = 'inactive';
+%>
+
+<% for ( var i = menu.length; i--; )  {
+
+    if( menu[i].search( page ) === -1 )  {
+
+      menu.splice( i , 1 );
+
+    }
+
+ }  %>
+
+<ul class="nav nav-pills nav-stacked vertical">
+
+    <% for( var i=0; i < menu.length; i++ ) { %>
+
+      <% if( menu[i].split( '/' )[1] === pagetree[1] ) menuclass='active'; %>
+
+        <li>
+            <a class='<%= menuclass %>' href='/<%= menu[i] %>'>
+                <%= menu[i].replace( page + '/' , '' ).replace( '-' , ' ' ) %>
+            </a>
+        </li>
+
+    <% menuclass='inactive' %>
+
+    <% } %>
+
+</ul>
