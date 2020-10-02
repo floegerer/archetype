@@ -1,9 +1,16 @@
 // Require
 
 
-if (typeof(project)==='undefined') project = process.argv[2];
-if (typeof(process.argv[3])!=='undefined') { envtype = process.argv[3]; }
+if (typeof(project) === 'undefined') project = process.argv[2];
+if (typeof(process.argv[3]) !== 'undefined') { envtype = process.argv[3]; }
 else { envtype = "development"; }
+
+
+// Debug
+
+
+//console.log(envtype);
+//console.log(project);
 
 
 // Load modules
@@ -79,17 +86,41 @@ app.use(function(req, res, next) {
 });
 
 
+// Set encoding (?)
+
+
+/*
+app.get('/', function(req,res){
+  res.set({
+    'Content-Type' : 'text/html',
+    'charset' : 'utf-8'
+  });
+  res.end('Vous êtes à l\'accueil.');
+});
+*/
+
+
 // Dev Error handlers (stacktrace)
 
 
 if (app.get('env') === 'development') {
 
   app.use(function(err, req, res, next) {
+
     res.status(err.status || 500);
+
     res.render('error', {
       message: err.message,
       error: err
     });
+
+    res.set({
+      'Content-Type' : 'text/html',
+      'charset' : 'utf-8'
+    });
+
+    //res.header("Content-Type", "application/json; charset=utf-8");
+
   });
 
 }
@@ -102,8 +133,7 @@ if (app.get('env') === 'development') {
 
   livereload = require('better-livereload');
 
-  server = livereload.createServer({exts: ['less', 'css', 'ejs', 'js'], applyJSLive: true});
-  server.watch( uxproject + 'theme');
+  server = livereload.createServer({exts: ['css', 'ejs', 'js'], applyJSLive: false});
   server.watch( uxproject + 'src/css');
   server.watch( uxproject + 'src/js');
   server.watch( uxproject + 'pages/');
