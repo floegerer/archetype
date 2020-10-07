@@ -1,5 +1,5 @@
 {
-  "name": "proton",
+  "name": "archetype",
   "version": "0.1.1",
   "private": true,
   "description": "An user interface & expierence prototyping framework for node.js",
@@ -8,7 +8,7 @@
 
     "name": "Florian Egerer",
     "email": "office@florianegerer.com",
-    "url": "https://github.com/floegerer/proton"
+    "url": "https://github.com/floegerer/archetype"
 
   },
 
