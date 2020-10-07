@@ -1,6 +1,7 @@
 /node_modules/
 /projects/personal/
-/projects/jumio/
+/projects/backup/
+/projects/templates/
 /projects/**/src/css/main.css
 /projects/**/src/css/main.map
 /projects/**/config/pages.json

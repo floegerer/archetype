@@ -89,15 +89,13 @@ app.use(function(req, res, next) {
 // Set encoding (?)
 
 
-/*
 app.get('/', function(req,res){
   res.set({
     'Content-Type' : 'text/html',
     'charset' : 'utf-8'
   });
-  res.end('Vous êtes à l\'accueil.');
+  res.end('Encoding set.');
 });
-*/
 
 
 // Dev Error handlers (stacktrace)
@@ -114,10 +112,10 @@ if (app.get('env') === 'development') {
       error: err
     });
 
-    res.set({
-      'Content-Type' : 'text/html',
-      'charset' : 'utf-8'
-    });
+//    res.set({
+//      'Content-Type' : 'text/html',
+//      'charset' : 'utf-8'
+//    });
 
     //res.header("Content-Type", "application/json; charset=utf-8");
 
