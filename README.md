@@ -18,7 +18,8 @@ Archetype can also be used as a flat file system CMS, for easy creation of blazi
 - Run 'npm install'
 - Run 'grunt project:projectname'
 - Call 'http://localhost:8080'
-- Install the live reload plugin for chrome/chromium 'https://chrome.google.com/webstore/detail/remotelivereload/jlppknnillhjgiengoigajegdpieppei'
+- Install the live reload plugin for chrome/chromium
+ 'https://chrome.google.com/webstore/detail/remotelivereload/jlppknnillhjgiengoigajegdpieppei'
 
 # Projects #
 
